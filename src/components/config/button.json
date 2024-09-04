@@ -1,0 +1,45 @@
+{
+    "connection": "default",
+    "collectionName": "c_config_links",
+    "info": {
+        "name": "button",
+        "displayName": "Button",
+        "icon": "link"
+    },
+    "options": {},
+    "attributes": {
+        "type": {
+            "type": "enumeration",
+            "enum": [
+                "read-more",
+                "more",
+                "facts",
+                "events",
+                "join",
+                "demands",
+                "movement",
+                "facebook",
+                "website"
+            ]
+        },
+        "style": {
+            "type": "enumeration",
+            "enum": [
+                "primary",
+                "secondary"
+            ],
+            "required": false,
+            "default": "primary"
+        },
+        "link": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.short-translation"
+        },
+        "text": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.short-translation"
+        }
+    }
+}

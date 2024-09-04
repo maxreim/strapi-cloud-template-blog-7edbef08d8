@@ -1,0 +1,23 @@
+{
+  "connection": "default",
+  "collectionName": "c_component_events",
+  "info": {
+    "name": "events",
+    "displayName": "Events",
+    "icon": "calendar-day"
+  },
+  "options": {},
+  "attributes": {
+    "childIdentifier": {
+      "type": "string",
+      "required": true
+    },
+    "childType": {
+      "type": "string",
+      "required": true
+    },
+    "config": {
+      "type": "json"
+    }
+  }
+}

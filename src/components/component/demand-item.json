@@ -1,0 +1,32 @@
+{
+    "connection": "default",
+    "collectionName": "c_component_demand_items",
+    "info": {
+        "name": "demand-item",
+        "displayName": "Demand item",
+        "icon": "bullhorn"
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.short-translation"
+        },
+        "lead": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.medium-translation"
+        },
+        "icon": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.image-translation"
+        },
+        "text": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.long-translation"
+        }
+    }
+}

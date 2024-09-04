@@ -1,0 +1,22 @@
+{
+    "info": {
+        "name": "references",
+        "displayName": "References",
+        "icon": "info"
+    },
+    "options": {},
+    "attributes": {
+        "text": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.long-translation"
+        },
+        "references": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.reference"
+        }
+    },
+    "connection": "default",
+    "collectionName": "c_component_references"
+}

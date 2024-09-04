@@ -1,0 +1,22 @@
+{
+  "info": {
+    "name": "titled-text",
+    "displayName": "Titled text",
+    "icon": "text-height"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.long-translation"
+    }
+  },
+  "connection": "default",
+  "collectionName": "c_component_texts"
+}

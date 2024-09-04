@@ -1,0 +1,30 @@
+{
+  "collectionName": "c_component_petitions",
+  "info": {
+    "name": "petition",
+    "displayName": "Petition",
+    "icon": "pen-nib",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.long-translation"
+    },
+    "form": {
+      "type": "component",
+      "component": "component.form"
+    },
+    "shareButtons": {
+      "type": "component",
+      "component": "component.share-buttons"
+    }
+  }
+}

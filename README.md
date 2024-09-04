@@ -1,57 +1,85 @@
-# 🚀 Getting started with Strapi
+# Climatestrike backend
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+This repository contains the backend code for the climatestrike-website [repository](https://gitlab.com/cs-ch/website/climatestrike-backend). The backend is based on [strapi](https://strapi.io) (thanks!).
 
-### `develop`
-
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
-
+## Getting stared
 ```
-npm run develop
-# or
-yarn develop
+git clone https://gitlab.com/cs-ch/website/climatestrike-backend
 ```
 
-### `start`
-
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+### Development
+It makes sense to put all relevant environment variables into a `.env` file, which strapi automatically includes. For local development to work, you must put at least a value for the JWT_SECRET. After that configure your stuff, install the dependencies and build strapi!
 
 ```
-npm run start
-# or
-yarn start
+echo JWT_SECRET=$(openssl rand 64 | base64 | sed ':a;N;$!ba;s/\n//g')>>.env
+
+pushd plugins/wysiwyg
+npm i
+popd
 ```
-
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
+Then adjust the database, server configurations as well as the `config.json` to your needs and run 
 ```
 npm run build
-# or
-yarn build
+npm run develop
 ```
+to start the development environment. Please refer to the [strapi documentation](https://strapi.io/documentation/3.0.0-beta.x/getting-started/quick-start.html#_4-create-a-new-content-type) for further information.
 
-## ⚙️ Deployment
+### Development with local database
+For local development, it can be useful to develop against a SQLite database. For this, adjust your `./config/database.js` as follows:
+```JavaScript
+module.exports = ({ env }) => ({
+    defaultConnection: "default",
+    connections: {
+      default: {
+        connector: "bookshelf",
+        settings: {
+          client: "sqlite",
+          path: "./.tmp/data.db",
+          schema: "public"
+        },
+        options: {},
+      },
+    },
+  });
+```
+Then restart your strapi instance. When you navigate to `http://localhost:1337`, you will have the ability to create a new super admin:
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+![Initialize your strapi setup](./docs/init-strapi.png)
 
-## 📚 Learn more
+### User setup
+#### Technical API user
+In our use case, we want a technical user with read (and probably also write) permissions. For this, go to  Collection Types -> Users, to create a new technical user:
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+![Add tech user (1)](./docs/add-tech-user-1.png)
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+* Auto-confirm the user and use the authenticated:
 
-## ✨ Community
+![Add tech user (2)](./docs/add-tech-user-2.png)
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+* Next, go to Settings -> Roles and modify your "Authenticated" role to your likings. For local development you could e.g. allow all permissions like so. However, this is not reccomended for production environments.
 
----
+![Add tech user (3)](./docs/add-tech-user-3.png)
+![Add tech user (4)](./docs/add-tech-user-4.png)
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+Make sure to save your changes.
+
+#### Restrict public user access
+In our case, the CMS data should only be read by the technical user, but not public users. Therefore we have to restrict the premissions of the public users like so:
+
+* Go to Settings -> Roles
+
+![Restriction of public permissions](./docs/restrict-public-user-1.png)
+
+* Modify your "Public" role, so that all permissions are revoked.
+
+![Restriction of public permissions (2)](./docs/restrict-public-user-2.png)
+
+
+## Helpful functions
+- Use `openssl rand 64 | base64` to generate a new JWT token
+
+## Troubleshooting
+If you have troubles installing sqlite locally, you might need to set your python:
+```
+npm config set python /usr/local/bin/python3
+```

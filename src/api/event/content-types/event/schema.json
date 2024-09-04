@@ -1,0 +1,65 @@
+{
+  "connection": "default",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "name": "event"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "identifier": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.medium-translation"
+    },
+    "start": {
+      "type": "datetime",
+      "required": true
+    },
+    "end": {
+      "type": "datetime"
+    },
+    "zip": {
+      "type": "integer"
+    },
+    "location": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "published": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "contact": {
+      "type": "string"
+    },
+    "city": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "config.button"
+    },
+    "event_group": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event-group.event-group",
+      "inversedBy": "events"
+    }
+  }
+}

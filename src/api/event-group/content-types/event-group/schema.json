@@ -1,0 +1,58 @@
+{
+  "connection": "default",
+  "collectionName": "event_groups",
+  "info": {
+    "singularName": "event-group",
+    "pluralName": "event-groups",
+    "displayName": "Event-group",
+    "name": "event-group"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "identifier": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "strike",
+        "meetup",
+        "activity",
+        "digital"
+      ],
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "description": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.medium-translation"
+    },
+    "start": {
+      "type": "date",
+      "required": true
+    },
+    "end": {
+      "type": "date"
+    },
+    "multipleChildren": {
+      "type": "boolean",
+      "default": false
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event.event",
+      "mappedBy": "event_group"
+    }
+  }
+}

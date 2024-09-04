@@ -1,0 +1,16 @@
+{
+  "collectionName": "c_component_audio_players",
+  "info": {
+    "name": "audio-player",
+    "displayName": "Audio player",
+    "icon": "music"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.media-translation"
+    }
+  }
+}

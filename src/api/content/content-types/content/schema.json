@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "contents",
+  "info": {
+    "singularName": "content",
+    "pluralName": "contents",
+    "displayName": "Content",
+    "name": "content"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "identifier": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "sortId": {
+      "type": "decimal"
+    },
+    "grouping": {
+      "type": "string"
+    },
+    "data": {
+      "type": "dynamiczone",
+      "components": [
+        "component.audio-player",
+        "component.atlas",
+        "component.collapsible-text",
+        "component.download-section",
+        "component.demand-item",
+        "component.events",
+        "component.collapsible-text-with-lead",
+        "component.fact-item",
+        "component.form",
+        "component.headline",
+        "component.icon-title",
+        "component.iframe",
+        "component.large-image",
+        "component.join-item",
+        "component.landing-link",
+        "config.button",
+        "component.rich-text",
+        "component.milestones",
+        "component.newsletter-form",
+        "component.post-section",
+        "component.posts",
+        "component.raise-now-donation-widget",
+        "component.references",
+        "component.slides",
+        "component.titled-text",
+        "component.title",
+        "component.titled-subtitled-icon-item",
+        "component.download-section"
+      ],
+      "max": 1,
+      "min": 1,
+      "required": true
+    },
+    "page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::page.page",
+      "inversedBy": "contents"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "info": {
+        "name": "rich-text",
+        "displayName": "Rich text",
+        "icon": "arrow-circle-down"
+    },
+    "options": {},
+    "attributes": {
+        "text": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.long-translation"
+        }
+    },
+    "connection": "default",
+    "collectionName": "c_component_markdowns"
+}

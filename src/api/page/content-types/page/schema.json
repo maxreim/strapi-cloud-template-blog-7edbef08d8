@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page",
+    "name": "page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "identifier": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "string",
+      "unique": true
+    },
+    "sortId": {
+      "type": "decimal",
+      "required": false
+    },
+    "description": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.medium-translation"
+    },
+    "image": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.image-translation"
+    },
+    "imageRole": {
+      "type": "enumeration",
+      "enum": [
+        "PageAndPreview",
+        "PreviewOnly"
+      ],
+      "default": "PreviewOnly"
+    },
+    "contents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::content.content",
+      "mappedBy": "page"
+    },
+    "config": {
+      "type": "json"
+    }
+  }
+}

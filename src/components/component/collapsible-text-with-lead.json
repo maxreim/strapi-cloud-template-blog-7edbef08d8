@@ -1,0 +1,48 @@
+{
+  "connection": "default",
+  "collectionName": "c_component_expandable_descriptions",
+  "info": {
+    "name": "collapsible-text-with-lead",
+    "displayName": "Collapsible text with lead",
+    "icon": "arrows-alt-v",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "titleLevel": {
+      "type": "enumeration",
+      "enum": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "default": "2"
+    },
+    "lead": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.long-translation"
+    },
+    "text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.long-translation"
+    },
+    "style": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary"
+      ],
+      "default": "primary",
+      "required": false
+    }
+  }
+}

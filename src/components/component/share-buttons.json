@@ -1,0 +1,42 @@
+{
+  "collectionName": "c_component_share_buttons",
+  "info": {
+    "name": "shareButtons",
+    "displayName": "Share buttons",
+    "icon": "share-alt-square"
+  },
+  "options": {},
+  "attributes": {
+    "callToAction": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "emailSubject": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "emailMessage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.medium-translation"
+    },
+    "whatsappMessage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.medium-translation"
+    },
+    "twitterMessage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.medium-translation"
+    },
+    "enableFacebook": {
+      "type": "boolean"
+    },
+    "urlOverride": {
+      "type": "string"
+    }
+  }
+}

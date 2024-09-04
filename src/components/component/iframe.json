@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "c_component_iframes",
+  "info": {
+    "name": "iframe",
+    "displayName": "Iframe",
+    "icon": "expand"
+  },
+  "options": {},
+  "attributes": {
+    "src": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "html": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.medium-translation"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "form_data",
+  "info": {
+    "singularName": "form-datum",
+    "pluralName": "form-data",
+    "displayName": "Form-datum",
+    "name": "form-datum"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "identifier": {
+      "type": "string",
+      "required": true
+    },
+    "data": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

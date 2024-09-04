@@ -1,0 +1,17 @@
+{
+    "info": {
+        "name": "large-image",
+        "displayName": "Large image",
+        "icon": "file-image"
+    },
+    "options": {},
+    "attributes": {
+        "image": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.image-translation"
+        }
+    },
+    "connection": "default",
+    "collectionName": "c_component_image_with_captions"
+}

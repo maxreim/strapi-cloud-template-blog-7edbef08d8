@@ -1,0 +1,22 @@
+{
+  "collectionName": "c_config_slide",
+  "info": {
+    "name": "slide",
+    "displayName": "Slide",
+    "icon": "chevron-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "component",
+      "component": "config.image-translation",
+      "repeatable": true
+    },
+    "text": {
+      "type": "component",
+      "component": "config.medium-translation",
+      "repeatable": true
+    }
+  }
+}

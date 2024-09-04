@@ -1,0 +1,30 @@
+{
+  "collectionName": "c_config_image_translations",
+  "info": {
+    "name": "image-translation",
+    "displayName": "Image translation",
+    "icon": "images",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "all",
+        "de",
+        "fr",
+        "it"
+      ],
+      "default": "all",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

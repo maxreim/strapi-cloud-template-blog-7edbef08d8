@@ -1,0 +1,22 @@
+{
+    "info": {
+        "name": "newsletter-form",
+        "displayName": "Newsletter form",
+        "icon": "envelope-open"
+    },
+    "options": {},
+    "attributes": {
+        "identifier": {
+            "type": "string"
+        },
+        "text": {
+            "type": "component",
+            "component": "component.titled-text"
+        },
+        "submitUrl": {
+            "type": "string"
+        }
+    },
+    "connection": "default",
+    "collectionName": "c_component_newsletter_forms"
+}

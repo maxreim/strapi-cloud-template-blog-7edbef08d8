@@ -1,0 +1,34 @@
+{
+  "connection": "default",
+  "collectionName": "c_component_fact_items",
+  "info": {
+    "name": "fact-item",
+    "displayName": "Fact item",
+    "icon": "atom",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "lead": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.medium-translation"
+    },
+    "icon": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.image-translation"
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.button",
+      "max": 4
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "c_component_slides",
+  "info": {
+    "name": "slides",
+    "displayName": "Slides",
+    "icon": "photo-video"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.slide"
+    }
+  }
+}

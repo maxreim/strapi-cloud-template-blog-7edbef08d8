@@ -1,0 +1,102 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post",
+    "name": "post",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "identifier": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "date": {
+      "type": "date"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "good-news",
+        "other-news",
+        "unlisted"
+      ],
+      "required": true
+    },
+    "tag": {
+      "type": "string"
+    },
+    "title": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation",
+      "required": true
+    },
+    "lead": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.medium-translation"
+    },
+    "thumbnail": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.image-translation"
+    },
+    "image": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.image-translation"
+    },
+    "author": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "relatedPosts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post",
+      "mappedBy": "referencedBy"
+    },
+    "referencedBy": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post",
+      "inversedBy": "relatedPosts"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "component.audio-player",
+        "component.collapsible-text",
+        "component.download-section",
+        "component.collapsible-text-with-lead",
+        "component.fact-item",
+        "component.form",
+        "component.icon-title",
+        "component.iframe",
+        "component.large-image",
+        "component.petition",
+        "config.button",
+        "component.rich-text",
+        "component.references",
+        "component.slides",
+        "component.titled-text",
+        "component.title"
+      ]
+    }
+  }
+}

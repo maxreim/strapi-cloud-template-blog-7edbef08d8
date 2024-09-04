@@ -1,0 +1,37 @@
+{
+    "info": {
+        "name": "join-item",
+        "displayName": "Join item",
+        "icon": "hands-helping"
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.short-translation"
+        },
+        "text": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.medium-translation"
+        },
+        "icon": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.image-translation"
+        },
+        "image": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.image-translation"
+        },
+        "link": {
+            "type": "component",
+            "repeatable": false,
+            "component": "config.button"
+        }
+    },
+    "connection": "default",
+    "collectionName": "c_component_join_items"
+}

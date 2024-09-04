@@ -1,0 +1,27 @@
+{
+  "connection": "default",
+  "collectionName": "c_config_long_translations",
+  "info": {
+    "name": "long-translation",
+    "displayName": "Long translation",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "all",
+        "de",
+        "fr",
+        "it"
+      ],
+      "required": true,
+      "default": "all"
+    },
+    "text": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

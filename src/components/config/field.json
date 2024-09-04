@@ -1,0 +1,44 @@
+{
+  "connection": "default",
+  "collectionName": "c_config_fields",
+  "info": {
+    "name": "field",
+    "displayName": "Field",
+    "icon": "question",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "email",
+        "zipch",
+        "phone",
+        "number",
+        "dropdown",
+        "checkboxes",
+        "boolean"
+      ],
+      "required": true
+    },
+    "required": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "placeholder": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "config": {
+      "type": "json"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact",
+    "name": "contact"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "identifier": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "website",
+        "email",
+        "telegram",
+        "whatsapp",
+        "facebook",
+        "instagram",
+        "discord",
+        "twitter",
+        "other"
+      ],
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "linkName": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "contact_group": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact-group.contact-group",
+      "inversedBy": "contacts"
+    }
+  }
+}

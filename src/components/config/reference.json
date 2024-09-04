@@ -1,0 +1,22 @@
+{
+    "info": {
+        "name": "reference",
+        "displayName": "References",
+        "icon": "file-export"
+    },
+    "options": {},
+    "attributes": {
+        "link": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.short-translation"
+        },
+        "description": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.medium-translation"
+        }
+    },
+    "connection": "default",
+    "collectionName": "c_config_references"
+}

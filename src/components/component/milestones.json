@@ -1,0 +1,31 @@
+{
+    "collectionName": "c_component_milestones",
+    "info": {
+        "name": "milestones",
+        "displayName": "Milestones",
+        "icon": "check-square"
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.short-translation"
+        },
+        "entries": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.milestones-entry"
+        },
+        "backgroundSmall": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.image-translation"
+        },
+        "backgroundLarge": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.image-translation"
+        }
+    }
+}

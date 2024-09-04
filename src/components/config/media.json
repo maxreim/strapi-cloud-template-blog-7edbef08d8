@@ -1,0 +1,21 @@
+{
+  "collectionName": "c_config_media",
+  "info": {
+    "name": "media",
+    "displayName": "Media",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.media-translation"
+    }
+  }
+}

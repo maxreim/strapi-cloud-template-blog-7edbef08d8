@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "contact_groups",
+  "info": {
+    "singularName": "contact-group",
+    "pluralName": "contact-groups",
+    "displayName": "Contact-group",
+    "name": "contact-group"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "identifier": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "identifiers": {
+      "type": "json"
+    },
+    "description": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "selected": {
+      "type": "boolean"
+    },
+    "contacts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::contact.contact",
+      "mappedBy": "contact_group"
+    }
+  }
+}

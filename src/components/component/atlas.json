@@ -1,0 +1,24 @@
+{
+    "connection": "default",
+    "collectionName": "c_component_atlases",
+    "info": {
+        "displayName": "Map",
+        "name": "atlas",
+        "icon": "map-marker-alt"
+    },
+    "options": {},
+    "attributes": {
+        "childType": {
+            "type": "string",
+            "required": true
+        },
+        "childIdentifier": {
+            "type": "string",
+            "required": true
+        },
+        "config": {
+            "type": "json",
+            "required": true
+        }
+    }
+}

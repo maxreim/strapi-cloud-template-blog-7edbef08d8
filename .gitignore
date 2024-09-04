@@ -95,20 +95,23 @@ results
 node_modules
 .node_history
 
+
 ############################
 # Tests
 ############################
 
+testApp
 coverage
 
 ############################
 # Strapi
 ############################
 
-.env
-license.txt
 exports
-.strapi
-dist
+.cache
 build
+public
+
+# Custom gitignore
 .strapi-updater.json
+.env

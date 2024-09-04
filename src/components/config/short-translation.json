@@ -1,0 +1,27 @@
+{
+  "connection": "default",
+  "collectionName": "c_config_short_translations",
+  "info": {
+    "name": "short-translation",
+    "displayName": "Short translation",
+    "icon": "language"
+  },
+  "options": {},
+  "attributes": {
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "all",
+        "de",
+        "fr",
+        "it"
+      ],
+      "required": true,
+      "default": "all"
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

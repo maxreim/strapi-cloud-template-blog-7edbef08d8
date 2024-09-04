@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "c_config_medium_translations",
+  "info": {
+    "name": "medium-translation",
+    "displayName": "Medium translation",
+    "icon": "clipboard"
+  },
+  "options": {},
+  "attributes": {
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "all",
+        "de",
+        "fr",
+        "it"
+      ],
+      "default": "all",
+      "required": true
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

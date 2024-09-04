@@ -1,0 +1,22 @@
+{
+    "connection": "default",
+    "collectionName": "c_component_post_sections",
+    "info": {
+        "name": "post-section",
+        "displayName": "Post section",
+        "icon": "receipt"
+    },
+    "options": {},
+    "attributes": {
+        "childType": {
+            "type": "string",
+            "required": true
+        },
+        "childIdentifier": {
+            "type": "string"
+        },
+        "config": {
+            "type": "json"
+        }
+    }
+}

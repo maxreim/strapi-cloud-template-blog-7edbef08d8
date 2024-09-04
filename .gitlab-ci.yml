@@ -1,0 +1,50 @@
+image: docker:git
+
+services:
+  - docker:dind
+
+variables:
+  CONTAINER_IMAGE: registry.gitlab.com/cs-ch/website/$CI_PROJECT_NAME
+
+stages:
+  - build_and_push
+  - deploy
+
+build_and_push:
+  stage: build_and_push
+
+  script:
+    - export IMAGE_TAG="latest" && [[ "$CI_COMMIT_BRANCH" != "development" ]] && IMAGE_TAG="prod"
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - echo "Building image with tags $IMAGE_TAG, $CI_COMMIT_SHORT_SHA"
+    - >
+      docker build
+      --cache-from $CI_REGISTRY_IMAGE:$IMAGE_TAG
+      --tag $CONTAINER_IMAGE:$CI_COMMIT_SHORT_SHA
+      --tag $CONTAINER_IMAGE:$IMAGE_TAG
+      .
+    - docker push $CONTAINER_IMAGE:$IMAGE_TAG
+    - docker push $CONTAINER_IMAGE:$CI_COMMIT_SHORT_SHA
+
+  only:
+    - development
+    - master
+
+deploy:
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+
+  script:
+    - export IMAGE_TAG="latest" && [[ "$CI_COMMIT_BRANCH" != "development" ]] && IMAGE_TAG="prod"
+    - export ENV_NAME="stage" && [[ "$CI_COMMIT_BRANCH" != "development" ]] && ENV_NAME="prod"
+    - export SERVICE_NAME=climatestrike-${ENV_NAME}-cms.service
+    - export SERVER_ADDRESS=$DEV_SERVER_ADDRESS && [[ "$CI_COMMIT_BRANCH" != "development" ]] && SERVER_IP=$PROD_SERVER_ADDRESS
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - echo "${SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add - > /dev/null
+    - ssh gitlab-cd@$SERVER_ADDRESS "docker pull $CONTAINER_IMAGE:$IMAGE_TAG && sudo systemctl restart $SERVICE_NAME"

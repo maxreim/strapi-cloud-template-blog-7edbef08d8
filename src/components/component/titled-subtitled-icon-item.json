@@ -1,0 +1,31 @@
+{
+  "collectionName": "c_component_titled_subtitled_icon_items",
+  "info": {
+    "name": "titled-subtitled-icon-item",
+    "displayName": "Titled/subtitled icon item",
+    "icon": "equals"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "subtitle": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.long-translation"
+    },
+    "icon": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.image-translation"
+    }
+  }
+}

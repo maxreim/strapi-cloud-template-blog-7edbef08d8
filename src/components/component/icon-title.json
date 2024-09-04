@@ -1,0 +1,27 @@
+{
+  "connection": "default",
+  "collectionName": "c_component_icon_titles",
+  "info": {
+    "name": "icon-title",
+    "displayName": "Icon title",
+    "icon": "indent"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.medium-translation"
+    },
+    "icon": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.image-translation"
+    }
+  }
+}

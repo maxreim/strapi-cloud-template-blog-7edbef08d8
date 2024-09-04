@@ -1,0 +1,33 @@
+{
+    "connection": "default",
+    "collectionName": "c_config_forms",
+    "info": {
+        "name": "form",
+        "displayName": "Form",
+        "icon": "question-circle"
+    },
+    "options": {},
+    "attributes": {
+        "identifier": {
+            "type": "string",
+            "unique": true,
+            "required": true
+        },
+        "title": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.short-translation"
+        },
+        "fields": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.field",
+            "required": true
+        },
+        "submitText": {
+            "type": "component",
+            "repeatable": true,
+            "component": "config.short-translation"
+        }
+    }
+}

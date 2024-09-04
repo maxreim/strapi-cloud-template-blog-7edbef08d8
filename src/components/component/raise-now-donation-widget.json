@@ -1,0 +1,29 @@
+{
+  "collectionName": "c_component_raise_now_donation_widget",
+  "info": {
+    "name": "raise-now-donation-widget",
+    "displayName": "Raise now donation widget",
+    "icon": "credit-card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.short-translation"
+    },
+    "lead": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.medium-translation"
+    },
+    "scriptSrc": {
+      "type": "string",
+      "required": true
+    },
+    "config": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

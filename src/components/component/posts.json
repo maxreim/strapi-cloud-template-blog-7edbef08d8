@@ -1,0 +1,23 @@
+{
+  "connection": "default",
+  "collectionName": "c_component_posts",
+  "info": {
+    "name": "posts",
+    "displayName": "Posts",
+    "icon": "file-alt"
+  },
+  "options": {},
+  "attributes": {
+    "childType": {
+      "type": "string",
+      "required": false
+    },
+    "childIdentifier": {
+      "type": "string",
+      "required": true
+    },
+    "config": {
+      "type": "json"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "collectionName": "c_config_media_translations",
+  "info": {
+    "name": "media-translation",
+    "displayName": "Media (images, files, ...) translations",
+    "icon": "file-medical-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "all",
+        "de",
+        "fr",
+        "it"
+      ],
+      "default": "all",
+      "required": true
+    },
+    "medium": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

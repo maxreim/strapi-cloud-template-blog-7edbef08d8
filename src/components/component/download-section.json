@@ -1,0 +1,16 @@
+{
+  "collectionName": "c_component_download_sections",
+  "info": {
+    "name": "download-section",
+    "displayName": "Download section",
+    "icon": "cloud-download-alt"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.media"
+    }
+  }
+}
